@@ -1,5 +1,7 @@
 var Cylon = require('cylon');
 var bot;
+var Cylon = require('cylon');
+var utils = require('./utils/droneUtils.js');
 
 // Initialise the robot
 Cylon.robot()

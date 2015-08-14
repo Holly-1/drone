@@ -12,18 +12,22 @@ function initTracker(element) {
 
     // The colors we're interested in
     TrackerUtils.addTrackingColor("#A94A45", "red", tracker);
+    TrackerUtils.addTrackingColor("#e50000", "red", tracker);
+
     TrackerUtils.addTrackingColor("#5EA24E", "green", tracker);
+
+
     TrackerUtils.addTrackingColor("#CB7F84", "magenta", tracker);
     TrackerUtils.startTrackingColors(tracker);
 
     // Whenever there is a new color detected, mark them
     tracker.on('track', function(event) {
+        markColors(event.data, element);
         console.log(event.data);
     });
 
     return tracker;
 }
-
 
 function markColors(colors, element) {
     // Do the marking
@@ -51,6 +55,5 @@ function markColors(colors, element) {
     }
 
 }
-
 
 window.addEventListener("load", init);
